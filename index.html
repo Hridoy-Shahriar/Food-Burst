@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fruit Burst</title>
+
+    <!-- Google Fonts - Lato -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- DaisyUi + Tailwind CSS CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Custom CSS -->
+    <style type="text/tailwindcss">
+      @theme {
+        --color-clifford: #da373d;
+        --color-heading: #121212;
+        --color-paragraph: #12121299;
+        --font-lato: "Lato", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="font-lato">
+    <header class="px-5 lg-px-0 container mx-auto mb-6 lg:mb-0">
+      <!-- Nav Bar Starts Here -->
+      <nav>
+        <div
+          class="navbar lg:bg-[#F85559] my-14 lg:rounded-full p-0 lg:py-10 lg:px-12"
+        >
+          <div class="navbar-start">
+            <ul
+              class="menu menu-horizontal px-1 hidden lg:flex text-white font-medium text-lg gap-4"
+            >
+              <li><a>Home</a></li>
+              <li><a>About Us</a></li>
+              <li><a>Shop</a></li>
+              <li><a>All Fruits</a></li>
+            </ul>
+            <button
+              class="btn bg-transparent border-none shadow-none text-xl gap-4 lg:hidden p-0"
+            >
+              <img class="h-full" src="images/logo.png" alt="" />
+              <p class="text-[20px] text-[#121212] font-bold">Fruit Burst</p>
+            </button>
+          </div>
+          <div class="navbar-center hidden lg:flex">
+            <button
+              class="btn bg-transparent border-none shadow-none text-xl gap-4"
+            >
+              <img src="images/logo.png" alt="" />
+              <p class="text-[40px] text-white font-bold">Fruit Burst</p>
+            </button>
+          </div>
+          <div class="navbar-end">
+            <form
+              class="hidden lg:flex justify-between rounded-full px-[30px] py-4 bg-white items-center w-3/4"
+            >
+              <input
+                class="border-none focus:outline-none w-full"
+                type="search"
+                required
+                placeholder="Search"
+              />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M20.9998 21L15.8028 15.803M15.8028 15.803C17.2094 14.3965 17.9996 12.4887 17.9996 10.4995C17.9996 8.51035 17.2094 6.60262 15.8028 5.19605C14.3962 3.78947 12.4885 2.99927 10.4993 2.99927C8.51011 2.99927 6.60238 3.78947 5.19581 5.19605C3.78923 6.60262 2.99902 8.51035 2.99902 10.4995C2.99902 12.4887 3.78923 14.3965 5.19581 15.803C6.60238 17.2096 8.51011 17.9998 10.4993 17.9998C12.4885 17.9998 14.3962 17.2096 15.8028 15.803Z"
+                  stroke="#121212"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </form>
+            <div class="dropdown">
+              <div
+                tabindex="0"
+                role="button"
+                class="btn btn-ghost lg:hidden p-0"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M3.75 6.75H20.25M3.75 12H20.25M3.75 17.25H20.25"
+                    stroke="#121212"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <ul
+                tabindex="0"
+                class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-24 p-2 shadow -translate-x-10 font-medium text-lg"
+              >
+                <li><a>Home</a></li>
+                <li><a>About Us</a></li>
+                <li><a>Shop</a></li>
+                <li><a>All Fruits</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!-- Nav Bar Ends Here -->
+
+      <!-- Banner Section Starts Here -->
+      <div>
+        <div class="carousel w-full rounded-lg">
+          <!-- Slide 1 -->
+          <div
+            id="slide1"
+            class="carousel-item relative w-full bg-[linear-gradient(180deg,#121212,#12121200),url(images/banner1.png)] bg-cover bg-center"
+          >
+            <div
+              class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between"
+            >
+              <a
+                href="#slide4"
+                class="btn btn-circle bg-[#121212] text-white border-none shadow-none"
+                >❮</a
+              >
+              <a
+                href="#slide2"
+                class="btn btn-circle bg-[#121212] text-white border-none shadow-none"
+                >❯</a
+              >
+            </div>
+            <div class="w-full flex flex-col items-center justify-center">
+              <div class="flex flex-col justify-center items-center gap-6">
+                <h1
+                  class="text-white text-2xl lg:text-7xl font-extrabold text-center"
+                >
+                  Exotic tastes at your <br />
+                  doorstep
+                </h1>
+                <p class="text-white text-sm lg:text-xl text-center">
+                  We supply highly quality organic products
+                </p>
+                <button
+                  class="text-white text-lg lg:text-xl px-4 py-2 lg:px-7 lg:py-5 bg-[#F85559] rounded-lg hover:cursor-pointer leading-none active:scale-95 transition-transform duration-100"
+                >
+                  Shop Now
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div
+            id="slide2"
+            class="carousel-item relative w-full bg-[linear-gradient(180deg,#121212,#12121200),url(images/banner2.png)] bg-cover bg-center"
+          >
+            <div
+              class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between"
+            >
+              <a
+                href="#slide1"
+                class="btn btn-circle bg-[#121212] text-white border-none shadow-none"
+                >❮</a
+              >
+              <a
+                href="#slide3"
+                class="btn btn-circle bg-[#121212] text-white border-none shadow-none"
+                >❯</a
+              >
+            </div>
+            <div
+              class="w-full flex flex-col justify-center items-center gap-6 lg:gap-10 py-20 lg:py-40"
+            >
+              <h1
+                class="text-white text-2xl lg:text-7xl font-extrabold text-center"
+              >
+                Exotic tastes at your <br />
+                doorstep
+              </h1>
+              <p class="text-white text-sm lg:text-xl text-center">
+                We supply highly quality organic products
+              </p>
+              <button
+                class="text-white text-lg lg:text-xl px-4 py-2 lg:px-7 lg:py-5 bg-[#F85559] rounded-lg hover:cursor-pointer leading-none active:scale-95 transition-transform duration-100"
+              >
+                Shop Now
+              </button>
+            </div>
+          </div>
+          <!-- Slide 3 -->
+          <div
+            id="slide3"
+            class="carousel-item relative w-full bg-[linear-gradient(180deg,#121212,#12121200),url(images/banner3.png)] bg-cover bg-center"
+          >
+            <div
+              class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between"
+            >
+              <a
+                href="#slide2"
+                class="btn btn-circle bg-[#121212] text-white border-none shadow-none"
+                >❮</a
+              >
+              <a
+                href="#slide4"
+                class="btn btn-circle bg-[#121212] text-white border-none shadow-none"
+                >❯</a
+              >
+            </div>
+            <div
+              class="w-full flex flex-col justify-center items-center gap-6 lg:gap-10 py-20 lg:py-40"
+            >
+              <h1
+                class="text-white text-2xl lg:text-7xl font-extrabold text-center"
+              >
+                Exotic tastes at your <br />
+                doorstep
+              </h1>
+              <p class="text-white text-sm lg:text-xl text-center">
+                We supply highly quality organic products
+              </p>
+              <button
+                class="text-white text-lg lg:text-xl px-4 py-2 lg:px-7 lg:py-5 bg-[#F85559] rounded-lg hover:cursor-pointer leading-none active:scale-95 transition-transform duration-100"
+              >
+                Shop Now
+              </button>
+            </div>
+          </div>
+          <!-- Slide 4 -->
+          <div
+            id="slide4"
+            class="carousel-item relative w-full bg-[linear-gradient(180deg,#121212,#12121200),url(images/banner4.png)] bg-cover bg-center"
+          >
+            <div
+              class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between"
+            >
+              <a
+                href="#slide3"
+                class="btn btn-circle bg-[#121212] text-white border-none shadow-none"
+                >❮</a
+              >
+              <a
+                href="#slide1"
+                class="btn btn-circle bg-[#121212] text-white border-none shadow-none"
+                >❯</a
+              >
+            </div>
+            <div
+              class="w-full flex flex-col justify-center items-center gap-6 lg:gap-10 py-20 lg:py-40"
+            >
+              <h1
+                class="text-white text-2xl lg:text-7xl font-extrabold text-center"
+              >
+                Exotic tastes at your <br />
+                doorstep
+              </h1>
+              <p class="text-white text-sm lg:text-xl text-center">
+                We supply highly quality organic products
+              </p>
+              <button
+                class="text-white text-lg lg:text-xl px-4 py-2 lg:px-7 lg:py-5 bg-[#F85559] rounded-lg hover:cursor-pointer leading-none active:scale-95 transition-transform duration-100"
+              >
+                Shop Now
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="hidden lg:flex justify-center items-center gap-[90px] mt-10 bg-white rounded-lg py-[50px] px-[70px] shadow-lg w-fit mx-auto -translate-y-36"
+        >
+          <div class="flex flex-col justify-center items-center gap-4">
+            <img src="images/fruit1.png" alt="" />
+            <p class="text-xl text-[#121212CC]">Grape</p>
+          </div>
+          <div class="flex flex-col justify-center items-center gap-4">
+            <img src="images/fruit2.png" alt="" />
+            <p class="text-xl text-[#121212CC]">Orange</p>
+          </div>
+          <div class="flex flex-col justify-center items-center gap-4">
+            <img src="images/fruit3.png" alt="" />
+            <p class="text-xl text-[#121212CC]">Mango</p>
+          </div>
+          <div class="flex flex-col justify-center items-center gap-4">
+            <img src="images/fruit4.png" alt="" />
+            <p class="text-xl text-[#121212CC]">Strawberry</p>
+          </div>
+          <div class="flex flex-col justify-center items-center gap-4">
+            <img src="images/fruit5.png" alt="" />
+            <p class="text-xl text-[#121212CC]">Pomegranate</p>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Main Section Starts Here -->
+    <main class="px-5 lg-px-0 container mx-auto">
+      <!-- Deal of the day stars here -->
+      <div
+        class="flex flex-col lg:flex-row justify-between items-center mb-5 lg:mb-12 text-center lg:text-left"
+      >
+        <!-- Text Content -->
+        <div>
+          <h1
+            class="text-xl lg:text-5xl font-extrabold mb-2 lg:mb-6 text-heading"
+          >
+            Deal of the day
+          </h1>
+          <p
+            class="text-sm lg:text-base font-medium mb-5 lg:mb-0 text-paragraph lg:max-w-[600px]"
+          >
+            Contrary to popular belief, is not simply random text. It has roots
+            in a piece of classical Latin literature from 45 BC, making it over
+            2000 years old.
+          </p>
+        </div>
+        <!-- Countdown Timer -->
+        <div>
+          <div class="grid auto-cols-max grid-flow-col gap-5 text-center">
+            <div class="flex flex-col">
+              <span class="countdown font-mono text-5xl">
+                <span style="--value: 15" aria-live="polite" aria-label="15"
+                  >15</span
+                >
+              </span>
+              days
+            </div>
+            <div class="flex flex-col">
+              <span class="countdown font-mono text-5xl">
+                <span style="--value: 10" aria-live="polite" aria-label="10"
+                  >10</span
+                >
+              </span>
+              hours
+            </div>
+            <div class="flex flex-col">
+              <span class="countdown font-mono text-5xl">
+                <span style="--value: 24" aria-live="polite" aria-label="24"
+                  >24</span
+                >
+              </span>
+              min
+            </div>
+            <div class="flex flex-col">
+              <span class="countdown font-mono text-5xl">
+                <span style="--value: 59" aria-live="polite" aria-label="59"
+                  >59</span
+                >
+              </span>
+              sec
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cards section starts here -->
+      <div class="mb-6 lg:mb-[140px]">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-items-center md:justify-items-stretch gap-6 mb-6 lg:mb-12"
+        >
+          <!-- Card 1 -->
+          <div
+            class="card border border-[#1212121A] py-[50px] w-[354px] md:w-auto"
+          >
+            <figure class="mb-12">
+              <img src="images/fruit6.png" alt="Apple" class="rounded-xl" />
+            </figure>
+            <div
+              class="card-body items-center gap-0 text-center w-[244px] mx-auto p-0"
+            >
+              <h2
+                class="text-2xl font-bold border-b border-[#1212121A] pb-6 mb-6 w-full"
+              >
+                12.90$ - 18.85$
+              </h2>
+              <p class="text-base font-medium text-paragraph mb-6">Apples</p>
+              <!-- Ratings Icons -->
+              <div class="rating rating-lg rating-half mb-8">
+                <input type="radio" name="rating-11" class="rating-hidden" />
+                <input
+                  type="radio"
+                  name="rating-1"
+                  class="mask mask-star-2 mask-half-1 bg-[#F85559]"
+                  aria-label="0.5 star"
+                />
+                <input
+                  type="radio"
+                  name="rating-1"
+                  class="mask mask-star-2 mask-half-2 bg-[#F85559] mr-2"
+                  aria-label="1 star"
+                />
+                <input
+                  type="radio"
+                  name="rating-1"
+                  class="mask mask-star-2 mask-half-1 bg-[#F85559]"
+                  aria-label="1.5 star"
+                  checked="checked"
+                />
+                <input
+                  type="radio"
+                  name="rating-1"
+                  class="mask mask-star-2 mask-half-2 bg-[#F85559] mr-2"
+                  aria-label="2 star"
+                />
+                <input
+                  type="radio"
+                  name="rating-1"
+                  class="mask mask-star-2 mask-half-1 bg-[#F85559]"
+                  aria-label="2.5 star"
+                />
+                <input
+                  type="radio"
+                  name="rating-1"
+                  class="mask mask-star-2 mask-half-2 bg-[#F85559] mr-2"
+                  aria-label="3 star"
+                />
+                <input
+                  type="radio"
+                  name="rating-1"
+                  class="mask mask-star-2 mask-half-1 bg-[#F85559]"
+                  aria-label="3.5 star"
+                />
+                <input
+                  type="radio"
+                  name="rating-1"
+                  class="mask mask-star-2 mask-half-2 bg-[#F85559] mr-2"
+                  aria-label="4 star"
+                />
+                <input
+                  type="radio"
+                  name="rating-1"
+                  class="mask mask-star-2 mask-half-1 bg-[#F85559]"
+                  aria-label="4.5 star"
+                />
+                <input
+                  type="radio"
+                  name="rating-1"
+                  class="mask mask-star-2 mask-half-2 bg-[#F85559]"
+                  aria-label="5 star"
+                />
+              </div>
+              <div class="card-actions">
+                <a href="" class="text-lg font-bold text-[#F85559]">Details</a>
+              </div>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div
+            class="card border border-[#1212121A] py-[50px] w-[354px] md:w-auto"
+          >
+            <figure class="mb-12">
+              <img src="images/fruit7.png" alt="Apple" class="rounded-xl" />
+            </figure>
+            <div
+              class="card-body items-center gap-0 text-center w-[244px] mx-auto p-0"
+            >
+              <h2
+                class="text-2xl font-bold border-b border-[#1212121A] pb-6 mb-6 w-full"
+              >
+                12.90$ - 18.85$
+              </h2>
+              <p class="text-base font-medium text-paragraph mb-6">Apples</p>
+              <!-- Ratings Icons -->
+              <div class="rating rating-lg rating-half mb-8">
+                <input type="radio" name="rating-11" class="rating-hidden" />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 mask-half-1 bg-[#F85559]"
+                  aria-label="0.5 star"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 mask-half-2 bg-[#F85559] mr-2"
+                  aria-label="1 star"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 mask-half-1 bg-[#F85559]"
+                  aria-label="1.5 star"
+                  checked="checked"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 mask-half-2 bg-[#F85559] mr-2"
+                  aria-label="2 star"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 mask-half-1 bg-[#F85559]"
+                  aria-label="2.5 star"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 mask-half-2 bg-[#F85559] mr-2"
+                  aria-label="3 star"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 mask-half-1 bg-[#F85559]"
+                  aria-label="3.5 star"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 mask-half-2 bg-[#F85559] mr-2"
+                  aria-label="4 star"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 mask-half-1 bg-[#F85559]"
+                  aria-label="4.5 star"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 mask-half-2 bg-[#F85559]"
+                  aria-label="5 star"
+                />
+              </div>
+              <div class="card-actions">
+                <a href="" class="text-lg font-bold text-[#F85559]">Details</a>
+              </div>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div
+            class="card border border-[#1212121A] py-[50px] w-[354px] md:w-auto"
+          >
+            <figure class="mb-12">
+              <img src="images/fruit8.png" alt="Apple" class="rounded-xl" />
+            </figure>
+            <div
+              class="card-body items-center gap-0 text-center w-[244px] mx-auto p-0"
+            >
+              <h2
+                class="text-2xl font-bold border-b border-[#1212121A] pb-6 mb-6 w-full"
+              >
+                12.90$ - 18.85$
+              </h2>
+              <p class="text-base font-medium text-paragraph mb-6">Apples</p>
+              <!-- Ratings Icons -->
+              <div class="rating rating-lg rating-half mb-8">
+                <input type="radio" name="rating-11" class="rating-hidden" />
+                <input
+                  type="radio"
+                  name="rating-3"
+                  class="mask mask-star-2 mask-half-1 bg-[#F85559]"
+                  aria-label="0.5 star"
+                />
+                <input
+                  type="radio"
+                  name="rating-3"
+                  class="mask mask-star-2 mask-half-2 bg-[#F85559] mr-2"
+                  aria-label="1 star"
+                />
+                <input
+                  type="radio"
+                  name="rating-3"
+                  class="mask mask-star-2 mask-half-1 bg-[#F85559]"
+                  aria-label="1.5 star"
+                  checked="checked"
+                />
+                <input
+                  type="radio"
+                  name="rating-3"
+                  class="mask mask-star-2 mask-half-2 bg-[#F85559] mr-2"
+                  aria-label="2 star"
+                />
+                <input
+                  type="radio"
+                  name="rating-3"
+                  class="mask mask-star-2 mask-half-1 bg-[#F85559]"
+                  aria-label="2.5 star"
+                />
+                <input
+                  type="radio"
+                  name="rating-3"
+                  class="mask mask-star-2 mask-half-2 bg-[#F85559] mr-2"
+                  aria-label="3 star"
+                />
+                <input
+                  type="radio"
+                  name="rating-3"
+                  class="mask mask-star-2 mask-half-1 bg-[#F85559]"
+                  aria-label="3.5 star"
+                />
+                <input
+                  type="radio"
+                  name="rating-3"
+                  class="mask mask-star-2 mask-half-2 bg-[#F85559] mr-2"
+                  aria-label="4 star"
+                />
+                <input
+                  type="radio"
+                  name="rating-3"
+                  class="mask mask-star-2 mask-half-1 bg-[#F85559]"
+                  aria-label="4.5 star"
+                />
+                <input
+                  type="radio"
+                  name="rating-3"
+                  class="mask mask-star-2 mask-half-2 bg-[#F85559]"
+                  aria-label="5 star"
+                />
+              </div>
+              <div class="card-actions">
+                <a href="" class="text-lg font-bold text-[#F85559]">Details</a>
+              </div>
+            </div>
+          </div>
+          <!-- Card 4 -->
+          <div
+            class="card border border-[#1212121A] py-[50px] w-[354px] md:w-auto"
+          >
+            <figure class="mb-12">
+              <img src="images/fruit9.png" alt="Apple" class="rounded-xl" />
+            </figure>
+            <div
+              class="card-body items-center gap-0 text-center w-[244px] mx-auto p-0"
+            >
+              <h2
+                class="text-2xl font-bold border-b border-[#1212121A] pb-6 mb-6 w-full"
+              >
+                12.90$ - 18.85$
+              </h2>
+              <p class="text-base font-medium text-paragraph mb-6">Apples</p>
+              <!-- Ratings Icons -->
+              <div class="rating rating-lg rating-half mb-8">
+                <input type="radio" name="rating-11" class="rating-hidden" />
+                <input
+                  type="radio"
+                  name="rating-4"
+                  class="mask mask-star-2 mask-half-1 bg-[#F85559]"
+                  aria-label="0.5 star"
+                />
+                <input
+                  type="radio"
+                  name="rating-4"
+                  class="mask mask-star-2 mask-half-2 bg-[#F85559] mr-2"
+                  aria-label="1 star"
+                />
+                <input
+                  type="radio"
+                  name="rating-4"
+                  class="mask mask-star-2 mask-half-1 bg-[#F85559]"
+                  aria-label="1.5 star"
+                  checked="checked"
+                />
+                <input
+                  type="radio"
+                  name="rating-4"
+                  class="mask mask-star-2 mask-half-2 bg-[#F85559] mr-2"
+                  aria-label="2 star"
+                />
+                <input
+                  type="radio"
+                  name="rating-4"
+                  class="mask mask-star-2 mask-half-1 bg-[#F85559]"
+                  aria-label="2.5 star"
+                />
+                <input
+                  type="radio"
+                  name="rating-4"
+                  class="mask mask-star-2 mask-half-2 bg-[#F85559] mr-2"
+                  aria-label="3 star"
+                />
+                <input
+                  type="radio"
+                  name="rating-4"
+                  class="mask mask-star-2 mask-half-1 bg-[#F85559]"
+                  aria-label="3.5 star"
+                />
+                <input
+                  type="radio"
+                  name="rating-4"
+                  class="mask mask-star-2 mask-half-2 bg-[#F85559] mr-2"
+                  aria-label="4 star"
+                />
+                <input
+                  type="radio"
+                  name="rating-4"
+                  class="mask mask-star-2 mask-half-1 bg-[#F85559]"
+                  aria-label="4.5 star"
+                />
+                <input
+                  type="radio"
+                  name="rating-4"
+                  class="mask mask-star-2 mask-half-2 bg-[#F85559]"
+                  aria-label="5 star"
+                />
+              </div>
+              <div class="card-actions">
+                <a href="" class="text-lg font-bold text-[#F85559]">Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-center">
+          <button
+            class="py-5 px-[30px] bg-[#F85559] text-white text-xl font-extrabold rounded-lg hover:cursor-pointer hover:bg-[#a7282a] active:scale-95 transition-transform duration-100"
+          >
+            Shop All
+          </button>
+        </div>
+      </div>
+      <!-- Deal of the day ends here -->
+    </main>
+  </body>
+</html>
